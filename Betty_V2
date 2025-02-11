@@ -23,21 +23,21 @@
     <script>
         // Initialize the Embedded Service
         function initEmbeddedMessaging() {
-            try {
-                embeddedservice_bootstrap.settings.language = 'en_US'; // Set language
+                                        try {
+                                            embeddedservice_bootstrap.settings.language = 'en_US';
+                                            embeddedservice_bootstrap.settings.devMode = true;
+                                            embeddedservice_bootstrap.settings.targetElement = "#chatTarget";
 
-                embeddedservice_bootstrap.init(
-                    '00Ddw0000007iNh', // Your Salesforce Org ID
-                    'GitHub', // Your Chat Button Name
-                    'https://capeunionmart--dev.sandbox.my.site.com/ESWGitHub1739262684971', // Your Deployment URL
-                    {
-                        scrt2URL: 'https://capeunionmart--dev.sandbox.my.salesforce-scrt.com'
-                    }
-                );
-            } catch (err) {
-                console.error('Error loading Embedded Messaging:', err);
-            }
-        }
+                                            embeddedservice_bootstrap.init(
+                                                '00Ddw0000007iNh',
+                                                'OldKhaki_messaging',
+                                                '//capeunionmart--dev.sandbox.my.site.com/ESWOldKhakimessaging1738230622756',
+                                                {scrt2URL: '//capeunionmart--dev.sandbox.my.salesforce-scrt.com'}
+                                            );
+                                        } catch (err) {
+                                            console.error('Error loading Embedded Messaging: ', err);
+                                        }
+                                    }
 
         // Toggle chat visibility
         function toggleChat() {
