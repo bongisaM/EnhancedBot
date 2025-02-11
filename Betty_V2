@@ -42,7 +42,9 @@
         // Toggle chat visibility
         function toggleChat() {
             embeddedservice.toggleChat();
-        }
+        }catch (err) {
+                                            console.error('Error loading Embedded Messaging: ', err);
+                                        }}
     </script>
 
     <!-- Latest Bootstrap JS Bundle -->
