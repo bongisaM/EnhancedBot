@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Einstein Bot</title>
+</head>
+<body>
+    <script type="text/javascript">
+        window.onload = function() {
+            const botConfig = {
+                organizationId: '00DQ1000001naRZ',
+                developerName: 'Cape_union_mart_Bot',
+                // Updated URL format
+                baseUrl: 'https://capeunionmart--devmay24.sandbox.my.salesforce.com'
+            };
+
+            const iframe = document.createElement('iframe');
+            // Proper URL construction with encoded parameters
+            iframe.src = `${botConfig.baseUrl}/s/chat/iframe.jsp?` + 
+                        `org=${encodeURIComponent(botConfig.organizationId)}&` +
+                        `bot=${encodeURIComponent(botConfig.developerName)}`;
+            
+            // Recommended styling
+            iframe.style.width = '100%';
+            iframe.style.height = '600px';  // Increased height for better visibility
+            iframe.style.border = 'none';
+            iframe.allow = 'microphone';  // Add if using voice features
+            
+            // Error handling
+            iframe.onerror = function() {
+                console.error('Failed to load Einstein Bot iframe');
+            };
+
+            document.body.appendChild(iframe);
+        };
+    </script>
+</body>
+</html>
